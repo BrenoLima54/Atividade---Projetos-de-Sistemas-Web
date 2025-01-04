@@ -1,7 +1,12 @@
 import "./App.css";
+import PesquisarAtleta from "./components/PesquisarAtleta";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <PesquisarAtleta></PesquisarAtleta>
+    </>
+  );
 }
 
 export default App;
