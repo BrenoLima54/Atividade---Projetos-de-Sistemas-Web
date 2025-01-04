@@ -12,7 +12,7 @@ export async function getFighterById(id) {
 
   if (response.ok) {
     const data = await response.json();
-    return data;
+    return data.response[0];
   }
 }
 
@@ -32,6 +32,6 @@ export async function searchFighterByName(name) {
 
   if (response.ok) {
     const data = await response.json();
-    return data;
+    return data.response;
   }
 }
