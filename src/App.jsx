@@ -2,26 +2,30 @@ import "./App.css";
 import React, { useState } from 'react';
 import CardAtleta from './components/CardAtleta';
 import PainelFavoritos from './components/PainelFavoritos';
-import { fetchAthletes } from './services/Api';  // Importação correta da função
-
+import { fetchAthletes } from './services/Api';
 
 function App() {
   const [search, setSearch] = useState('');
   const [atleta, setAtleta] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
+    if (!search) return;
+    setLoading(true);
     const data = await fetchAthletes(search);
     setAtleta(data);
+    setLoading(false);
   };
 
   const addToFavorites = (atleta) => {
     if (!favorites.find((fav) => fav.id === atleta.id)) {
-      console.log('Adicionando ao favoritos:', atleta); 
       setFavorites([...favorites, atleta]);
-    } else {
-      console.log('Atleta já adicionado aos favoritos');
     }
+  };
+
+  const removeFromFavorites = (atletaId) => {
+    setFavorites(favorites.filter((fav) => fav.id !== atletaId));
   };
 
   return (
@@ -29,23 +33,30 @@ function App() {
       <h1>Pesquisa de Atletas</h1>
       <input
         type="text"
-        placeholder="Nome do atleta"
+        className="input-search"
+        placeholder="Digite o nome do atleta"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button onClick={handleSearch}>Buscar</button>
+      <button className="search-button" onClick={handleSearch}>Pesquisar</button>
+
+      {loading && <p className="loading">Carregando...</p>}
 
       <div className="atleta-list">
         {atleta && atleta.length > 0 ? (
           atleta.map((atleta) => (
-            <CardAtleta key={atleta.id} atleta={atleta} addToFavorites={addToFavorites} />
+            <CardAtleta
+              key={atleta.id}
+              atleta={atleta}
+              addToFavorites={addToFavorites}
+            />
           ))
         ) : (
-          <p>Nenhum atleta encontrado</p>
+          <p className="no-results">Nenhum atleta encontrado</p>
         )}
       </div>
 
-      <PainelFavoritos favorites={favorites} />
+      <PainelFavoritos favorites={favorites} removeFromFavorites={removeFromFavorites} />
     </div>
   );
 }
