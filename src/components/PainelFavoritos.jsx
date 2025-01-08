@@ -1,4 +1,5 @@
 import React from "react";
+import { HeartOff } from 'lucide-react';
 
 const PainelFavoritos = ({ favorites, removeFromFavorites }) => {
   return (
@@ -8,7 +9,8 @@ const PainelFavoritos = ({ favorites, removeFromFavorites }) => {
         favorites.map((atleta) => (
           <div key={atleta.id} className="favorito-item">
             <h3>{atleta.name}</h3>
-            <button onClick={() => removeFromFavorites(atleta.id)}>
+            <button className="fav" onClick={() => removeFromFavorites(atleta.id)}>
+            <HeartOff />
               Remover dos favoritos
             </button>
           </div>

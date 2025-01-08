@@ -16,6 +16,14 @@ function App() {
     const data = await fetchAthletes(search);
     setAtleta(data);
     setLoading(false);
+    setSearch(''); 
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); 
+      handleSearch(); 
+    }
   };
 
   const addToFavorites = (atleta) => {
@@ -37,6 +45,7 @@ function App() {
         placeholder="Digite o nome do atleta"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        onKeyDown={handleKeyDown} 
       />
       <button className="search-button" onClick={handleSearch}>Pesquisar</button>
 
