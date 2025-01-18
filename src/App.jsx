@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from 'react';
 import CardAtleta from './components/CardAtleta';
 import PainelFavoritos from './components/PainelFavoritos';
-import { fetchAthletes } from './services/Api';
+import { fetchAthletes } from './services/api';
 
 function App() {
   const [search, setSearch] = useState('');
