@@ -1,10 +1,20 @@
+html,
+body,
+.root {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
   font-family: Arial, sans-serif;
-  width: 100%;
-  height: 100vh;
   padding: 20px;
   text-align: center;
-  background-color: #f7f7f7;
 }
 
 h1 {
@@ -18,6 +28,7 @@ h1 {
   padding: 10px 20px;
   font-size: 1rem;
   margin-bottom: 20px;
+  margin-inline: 20px;
   border: 2px solid #ccc;
   border-radius: 10px;
   outline: none;
@@ -44,7 +55,8 @@ h1 {
   background-color: #0056b3;
 }
 
-.atleta-list {
+.atleta-list,
+.painel-favoritos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
