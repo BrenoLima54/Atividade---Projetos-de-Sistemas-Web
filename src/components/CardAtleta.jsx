@@ -2,7 +2,12 @@ import React from "react";
 import { Heart } from "lucide-react";
 import imageNotFound from "../assets/image_not_found.png";
 
-const CardAtleta = ({ atleta, addToFavorites }) => {
+const CardAtleta = ({
+  atleta,
+  isFavorite,
+  addToFavorites,
+  removeFromFavorites,
+}) => {
   return (
     <div className="card">
       <img
@@ -18,8 +23,13 @@ const CardAtleta = ({ atleta, addToFavorites }) => {
       <p>{atleta.weight}</p>
       <p>{atleta.category}</p>
 
-      <button className="fav-butto" onClick={() => addToFavorites(atleta)}>
-        <Heart />
+      <button
+        className="fav-button"
+        onClick={() => {
+          isFavorite ? removeFromFavorites(atleta.id) : addToFavorites(atleta);
+        }}
+      >
+        <Heart className={isFavorite && "active"} />
       </button>
     </div>
   );

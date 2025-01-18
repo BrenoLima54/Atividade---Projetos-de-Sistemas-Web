@@ -83,21 +83,31 @@ h3 {
   color: #555;
 }
 
-  .fav-button{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+.fav-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+.fav-button svg {
+  color: #555;
+  fill: #555;
+
+  &.active {
+    color: #dc143c;
+    fill: #dc143c;
   }
-  
-  .loading {
-    font-size: 1.2rem;
-    color: #007bff;
-    margin-top: 20px;
-  }
-  
-  .no-results {
-    font-size: 1.2rem;
-    color: #888;
-    margin-top: 20px;
-  }
-  
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.no-results {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 20px;
+}

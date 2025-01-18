@@ -1,11 +1,11 @@
 import "./App.css";
-import React, { useState } from 'react';
-import CardAtleta from './components/CardAtleta';
-import PainelFavoritos from './components/PainelFavoritos';
-import { fetchAthletes } from './services/api';
+import React, { useState } from "react";
+import CardAtleta from "./components/CardAtleta";
+import PainelFavoritos from "./components/PainelFavoritos";
+import { fetchAthletes } from "./services/api";
 
 function App() {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [atleta, setAtleta] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -16,13 +16,13 @@ function App() {
     const data = await fetchAthletes(search);
     setAtleta(data);
     setLoading(false);
-    setSearch(''); 
+    setSearch("");
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault(); 
-      handleSearch(); 
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSearch();
     }
   };
 
@@ -45,9 +45,11 @@ function App() {
         placeholder="Digite o nome do atleta"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        onKeyDown={handleKeyDown} 
+        onKeyDown={handleKeyDown}
       />
-      <button className="search-button" onClick={handleSearch}>Pesquisar</button>
+      <button className="search-button" onClick={handleSearch}>
+        Pesquisar
+      </button>
 
       {loading && <p className="loading">Carregando...</p>}
 
@@ -57,7 +59,9 @@ function App() {
             <CardAtleta
               key={atleta.id}
               atleta={atleta}
+              isFavorite={favorites.includes(atleta)}
               addToFavorites={addToFavorites}
+              removeFromFavorites={removeFromFavorites}
             />
           ))
         ) : (
@@ -65,7 +69,10 @@ function App() {
         )}
       </div>
 
-      <PainelFavoritos favorites={favorites} removeFromFavorites={removeFromFavorites} />
+      <PainelFavoritos
+        favorites={favorites}
+        removeFromFavorites={removeFromFavorites}
+      />
     </div>
   );
 }
