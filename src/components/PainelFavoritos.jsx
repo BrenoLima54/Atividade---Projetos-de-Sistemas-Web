@@ -6,16 +6,16 @@ const PainelFavoritos = ({ favorites, removeFromFavorites }) => {
     <>
       <h2>Atletas Favoritos</h2>
       {favorites.length > 0 ? (
-        favorites.map((atleta) => (
-          <div className="painel-favoritos">
+        <div className="painel-favoritos">
+          {favorites.map((atleta) => (
             <CardAtleta
               key={atleta.id}
               atleta={atleta}
               isFavorite={true}
               removeFromFavorites={removeFromFavorites}
             />
-          </div>
-        ))
+          ))}
+        </div>
       ) : (
         <p className="no-results">Nenhum atleta nos favoritos</p>
       )}
