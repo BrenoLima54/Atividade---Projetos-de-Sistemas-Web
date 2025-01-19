@@ -1,14 +1,25 @@
 import React from "react";
 import CardAtleta from "./CardAtleta";
 
-const PainelFavoritos = ({ favoritos }) => {
+const PainelFavoritos = ({ favorites, removeFromFavorites }) => {
   return (
-    <div className="painel-favoritos">
+    <>
       <h2>Atletas Favoritos</h2>
-      {favoritos.map((atleta) => (
-        <CardAtleta atleta={atleta}></CardAtleta>
-      ))}
-    </div>
+      {favorites.length > 0 ? (
+        favorites.map((atleta) => (
+          <div className="painel-favoritos">
+            <CardAtleta
+              key={atleta.id}
+              atleta={atleta}
+              isFavorite={true}
+              removeFromFavorites={removeFromFavorites}
+            />
+          </div>
+        ))
+      ) : (
+        <p className="no-results">Nenhum atleta nos favoritos</p>
+      )}
+    </>
   );
 };
 

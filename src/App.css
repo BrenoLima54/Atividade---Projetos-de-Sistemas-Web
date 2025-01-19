@@ -1,0 +1,125 @@
+html,
+body,
+.root {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  font-size: 2rem;
+}
+
+.input-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  margin-inline: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-search:focus {
+  border-color: #007bff;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.atleta-list,
+.painel-favoritos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 45%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.card h2,
+h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.card p,
+.card h3 {
+  font-size: 1rem;
+  color: #555;
+}
+
+.fav-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+.fav-button svg {
+  color: #555;
+  fill: #555;
+
+  &.active {
+    color: #dc143c;
+    fill: #dc143c;
+  }
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.no-results {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 20px;
+}
