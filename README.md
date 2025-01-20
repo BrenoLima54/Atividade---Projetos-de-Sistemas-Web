@@ -12,7 +12,7 @@ Este é um projeto web desenvolvido com ReactJS que permite aos usuários pesqui
 
 ## Tecnologias Utilizadas
 
-- ReactJS
+- ReactJS com VITE
 - CSS para estilização
 - API de esportes: https://www.api-football.com/
 - Vercel para hospedagem
@@ -46,8 +46,15 @@ Antes de começar, você precisará ter o Node.js instalado na sua máquina.
    npm install
 
    ```
+4. Configurar a API
+Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
+```env
+VITE_API_URL=https://v1.mma.api-sports.io
+VITE_API_KEY=sua-chave-api
+```
+No arquivo `services/api.js`, certifique-se de usar estas variáveis para configurar a URL da API esportiva e as credenciais necessárias.
 
-4. Inicie o servidor de desenvolvimento:
+5. Inicie o servidor de desenvolvimento:
    ```bash
    npm run dev
    ```
