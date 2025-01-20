@@ -52,8 +52,6 @@ Antes de começar, você precisará ter o Node.js instalado na sua máquina.
    npm run dev
    ```
 
-## Abra o navegador em http://localhost:3000 para visualizar o sistema.
-
 ## Hospedagem
 
 O projeto está hospedado no Vercel e pode ser acessado no seguinte link:
