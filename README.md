@@ -1,38 +1,69 @@
-# Sistema Web de Pesquisa de Atletas
+# Sistema de Pesquisa e Favoritos de Atletas
 
-Este é um sistema web desenvolvido em ReactJS que permite a pesquisa de atletas de diferentes esportes. O projeto utiliza uma API de esportes para buscar informações sobre os atletas e exibi-las de forma organizada.
+Este é um projeto web desenvolvido com ReactJS que permite aos usuários pesquisar atletas de um determinado esporte e adicionar seus atletas favoritos a um painel personalizado. O projeto utiliza uma API de esportes para obter os dados dos atletas e foi hospedado no Vercel para fácil acesso.
 
-## Requisitos do Projeto
+## Funcionalidades
 
-### Funcionalidades
-
-A. **Tela de Pesquisa de Atletas**: O sistema possui uma tela onde é possível pesquisar atletas de um determinado esporte utilizando uma API de esportes.
-
-B. **Pesquisa por Nome**: Os atletas podem ser pesquisados pelo seu nome.
-
-C. **Componente `CardAtleta`**: As informações dos atletas são exibidas em um componente chamado `CardAtleta`.
-
-D. **Exibição de Imagem**: Cada `CardAtleta` exibe uma imagem do atleta.
-
-E. **Adicionar aos Favoritos**: Cada `CardAtleta` possui um botão "Adicionar aos favoritos", que permite ao usuário guardar o atleta em um array de favoritos.
-
-F. **Componente `Painel Favoritos`**: O sistema inclui um componente chamado `Painel Favoritos`, que exibe todos os atletas que foram adicionados aos favoritos.
-
-G. **Estrutura do Componente Raiz**: Todos os componentes são exibidos no componente raiz `App.js`.
-
-H. **Versionamento e Hospedagem**: O sistema está versionado no GitHub e hospedado no Vercel.
+- **Pesquisa de atletas**: Pesquise por atletas usando seus nomes.
+- **Exibição de informações**: Visualize as informações dos atletas em cartões (componente `CardAtleta`).
+- **Imagens dos atletas**: Cada atleta possui uma imagem exibida no cartão.
+- **Favoritar atletas**: Adicione atletas aos favoritos com um botão "Adicionar aos favoritos".
+- **Painel de favoritos**: Veja todos os atletas favoritos no componente `PainelFavoritos`.
 
 ## Tecnologias Utilizadas
 
 - ReactJS
-- Axios (ou Fetch API para chamadas de API)
-- CSS (ou uma biblioteca de estilos como Styled Components)
-- Git e GitHub para versionamento
+- CSS para estilização
+- API de esportes: https://www.api-football.com/
 - Vercel para hospedagem
+- Git/GitHub para controle de versão
 
-## Como Executar o Projeto
+## Pré-requisitos
 
-1. **Clone o repositório**:
+Antes de começar, você precisará ter o Node.js instalado na sua máquina.
+
+- [Node.js](https://nodejs.org/)
+
+## Como Executar Localmente
+
+1. Clone o repositório:
+
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-   cd nome-do-repositorio
+   git clone https://github.com/BrenoLima54/Atividade---Projetos-de-Sistemas-Web
+
+   ```
+
+2. Acesse o diretório do projeto:
+
+   ```bash
+   cd Atividade---Projetos-de-Sistemas-Web
+
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+## Abra o navegador em http://localhost:3000 para visualizar o sistema.
+
+## Hospedagem
+
+O projeto está hospedado no Vercel e pode ser acessado no seguinte link:
+
+https://search-athlets.vercel.app/
+
+## Desenvolvedores
+
+Os responsáveis pelo desenvolvimento deste projeto são:
+
+- [Breno Lima](https://github.com/BrenoLima54) - **BrenoLima54**
+- [Matheus Eduardo](https://github.com/BarbosaNath) - **BarbosaNath**
+- [Francinilton Junior](https://github.com/chapoliso) - **chapoliso**
